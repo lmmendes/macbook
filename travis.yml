@@ -1,0 +1,10 @@
+os: osx
+osx_image: 8.3.3
+before_install:
+  - brew install shellcheck
+rvm:
+  - 1.9.3
+  - 2.4.1
+script:
+  - shellcheck macbook -e SC2039
+  - sh macbook
