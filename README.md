@@ -34,11 +34,9 @@ What it sets up
 macOS tools:
 
 * [Homebrew] for managing operating system libraries.
-
-[Homebrew]: http://brew.sh/
-
 * [Cakebrew] Homebrew visual interface
 
+[Homebrew]: http://brew.sh/
 [Cakebrew]: https://www.cakebrew.com/
 
 Unix tools:
