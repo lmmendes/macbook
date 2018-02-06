@@ -1,5 +1,5 @@
 Macbook
-======
+========
 
 [![Build Status](https://travis-ci.org/lmmendes/macbook.svg?branch=master)](https://travis-ci.org/lmmendes/macbook)
 
