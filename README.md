@@ -53,7 +53,7 @@ Unix tools:
 [OpenSSL]: https://www.openssl.org/
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
 [Tmux]: http://tmux.github.io/
-[Cli]: https://github.com/cloudfoundry/cli
+[CF]: https://github.com/cloudfoundry/cli
 
 Programming languages, package managers, and configuration:
 
