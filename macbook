@@ -41,6 +41,7 @@ echo "Updating Homebrew formulae..."
 brew update
 brew bundle --file=- <<EOF
 tap "homebrew/services"
+tab "cloudfoundry/tap"
 cask "cakebrew"
 
 # Unix
@@ -52,17 +53,26 @@ brew "tmux"
 brew "vim", args: ["without-ruby"]
 brew "watch"
 cask "ngrok"
+brew "bash-completion"
+brew "cf-cli"
 EOF
 
 echo "Cleaning up old Homebrew formulae..."
 brew cleanup
 brew cask cleanup
 
-echo "Symlinking dotfiles..."
-echosymlink() {
-  echo "$2 -> $1"
-  ln -sf "$1" "$2"
-}
+declare -a bash_completion=("git-prompt.sh" "git-completion.bash")
+for file in "${bash_completion[@]}"
+do
+  if [ -f "/usr/local/etc/bash_completion.d/$file" ] then
+      grep -q -F "source /usr/local/etc/bash_completion.d/$file" ~/.bash_profile || echo "source /usr/local/etc/bash_completion.d/$file" >> ~/.bash_profile
+  fi
+done
+
+# export CLICOLOR=1
+# source /usr/local/etc/bash_completion.d/git-prompt.sh
+# export GIT_PS1_SHOWDIRTYSTATE=1
+# PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 if [ -d "$HOME/.asdf" ]; then
   echo "Upgrading ASDF version manager..."

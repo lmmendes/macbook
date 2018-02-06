@@ -45,11 +45,13 @@ Unix tools:
 * [OpenSSL] for Transport Layer Security (TLS)
 * [The Silver Searcher] for finding things in files
 * [Tmux] for saving project state and switching between projects
+* [CF] Command line client for Cloud Foundry
 
 [Git]: https://git-scm.com/
 [OpenSSL]: https://www.openssl.org/
 [The Silver Searcher]: https://github.com/ggreer/the_silver_searcher
 [Tmux]: http://tmux.github.io/
+[Cli]: https://github.com/cloudfoundry/cli
 
 Programming languages, package managers, and configuration:
 
