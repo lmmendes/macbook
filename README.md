@@ -14,19 +14,19 @@ based on what is already installed on the machine.
 Download the script:
 
 ```sh
-curl --remote-name https://raw.githubusercontent.com/lmmendes/macbook/master/macbook
+$ curl --remote-name https://raw.githubusercontent.com/lmmendes/macbook/master/macbook
 ```
 
 Execute the downloaded script:
 
 ```sh
-sh macbook 2>&1 | tee ~/macbook.log
+$ sh macbook 2>&1 | tee ~/macbook.log
 ```
 
 Optionally, review the log:
 
 ```sh
-less ~/macbook.log
+$ less ~/macbook.log
 ```
 
 ## What it sets up ##
@@ -71,12 +71,12 @@ Listing and installing a greater version of Java
 
 ```sh
 # List all version
-$> asdf list-all java
+$ asdf list-all java
 8.161
 9.0.1
 
 # Installing Java v9.0.1
-$> asdf install java 9.0.1
+$ asdf install java 9.0.1
 ```
 
 ## Installing a database (eg: MySQL or PostgreSQL) ##
@@ -84,10 +84,10 @@ $> asdf install java 9.0.1
 
 ```
 # MySQL
-brew install mysql
+$ brew install mysql
 
 # PostgreSQL
-brew install postgresql
+$ brew install postgresql
 ```
 
 Using brew services to manage installed services
