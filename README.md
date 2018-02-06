@@ -1,6 +1,8 @@
 Macbook
 ======
 
+[![Build Status](https://travis-ci.org/lmmendes/macbook.svg?branch=master)](https://travis-ci.org/lmmendes/macbook)
+
 Macbook is a script to set up an macOS laptop for web development.
 
 It can be run multiple times on the same machine safely.
