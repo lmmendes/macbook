@@ -90,8 +90,8 @@ brew install mysql
 brew install postgresql
 ```
 
-Using brew services
-------------------------
+Using brew services to manage installed services
+---------------------------------------------------
 
 Integrates Homebrew formulae with macOS's `launchctl` manager.
 
