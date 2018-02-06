@@ -64,7 +64,7 @@ brew cask cleanup
 declare -a bash_completion=("git-prompt.sh" "git-completion.bash")
 for file in "${bash_completion[@]}"
 do
-  if [ -f "/usr/local/etc/bash_completion.d/$file" ] then
+  if [ -f "/usr/local/etc/bash_completion.d/$file" ]; then
       grep -q -F "source /usr/local/etc/bash_completion.d/$file" ~/.bash_profile || echo "source /usr/local/etc/bash_completion.d/$file" >> ~/.bash_profile
   fi
 done
