@@ -84,7 +84,10 @@ else
   echo "Installing ASDF version manager..."
   git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf"
 
+  # shellcheck disable=SC2016
   echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bash_profile
+
+  # shellcheck disable=SC2016
   echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bash_profile
 fi
 
