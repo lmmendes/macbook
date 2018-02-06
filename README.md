@@ -9,8 +9,7 @@ It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
-Install
--------
+## Install ##
 
 Download the script:
 
@@ -30,8 +29,7 @@ Optionally, review the log:
 less ~/macbook.log
 ```
 
-What it sets up
----------------
+## What it sets up ##
 
 macOS tools:
 
@@ -67,8 +65,7 @@ Programming languages, package managers, and configuration:
 [Yarn]: https://yarnpkg.com/en/
 
 
-Managing packages using `asdf`
----------------
+## Managing packages using `asdf` ##
 
 Listing and installing a greater version of Java
 
@@ -80,4 +77,45 @@ $> asdf list-all java
 
 # Installing Java v9.0.1
 $> asdf install java 9.0.1
+```
+
+## Installing a database (eg: MySQL or PostgreSQL) ##
+
+
+```
+# MySQL
+brew install mysql
+
+# PostgreSQL
+brew install postgresql
+```
+
+Using brew services
+------------------------
+
+Integrates Homebrew formulae with macOS's `launchctl` manager.
+
+Install and start service mysql at login
+
+```
+$ brew install mysql
+$ brew services start mysql
+```
+
+Run service. Don't start at login (nor boot):
+
+```
+$ brew services run mysql
+```
+
+Stop service mysql:
+
+```
+$ brew services stop mysql
+```
+
+Restart service mysql:
+
+```
+$ brew services restart mysql
 ```
