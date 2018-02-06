@@ -41,7 +41,7 @@ echo "Updating Homebrew formulae..."
 brew update
 brew bundle --file=- <<EOF
 tap "homebrew/services"
-tab "cloudfoundry/tap"
+tap "cloudfoundry/tap"
 cask "cakebrew"
 
 # Unix
