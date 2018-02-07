@@ -56,6 +56,7 @@ Unix tools:
 Programming languages, package managers, and configuration:
 
 * [ASDF] for managing programming language versions
+* [Java] SE Development Kit 8
 * [Node.js] and [NPM], for running apps and installing JavaScript packages
 * [Yarn] for managing JavaScript packages
 
@@ -63,7 +64,7 @@ Programming languages, package managers, and configuration:
 [NPM]: https://www.npmjs.org/
 [ASDF]: https://github.com/asdf-vm/asdf
 [Yarn]: https://yarnpkg.com/en/
-
+[Java]: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
 ## Managing packages using `asdf` ##
 
