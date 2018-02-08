@@ -80,6 +80,18 @@ $ asdf list-all java
 $ asdf install java 9.0.1
 ```
 
+Listing and installing a greater version of Java
+
+```sh
+# List all version
+$ asdf list-all java
+8.161
+9.0.1
+
+# Installing Java v9.0.1
+$ asdf install java 9.0.1
+```
+
 ## Installing a database (eg: MySQL or PostgreSQL) ##
 
 
@@ -91,15 +103,13 @@ $ brew install mysql
 $ brew install postgresql
 ```
 
-Using brew services to manage installed services
----------------------------------------------------
+## Using brew services to manage installed services
 
 Integrates Homebrew formulae with macOS's `launchctl` manager.
 
-Install and start service mysql at login
+Start service mysql at login
 
 ```
-$ brew install mysql
 $ brew services start mysql
 ```
 
