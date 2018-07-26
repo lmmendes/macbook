@@ -42,6 +42,7 @@ brew update
 brew bundle --file=- <<EOF
 tap "homebrew/services"
 tap "cloudfoundry/tap"
+tab "caskroom/versions"
 cask "cakebrew"
 
 # Unix
@@ -50,11 +51,13 @@ brew "jq"
 brew "openssl"
 brew "the_silver_searcher"
 brew "tmux"
-brew "vim", args: ["without-ruby"]
+brew "vim"
 brew "watch"
 cask "ngrok"
 brew "bash-completion"
 brew "cf-cli"
+brew "java8"
+brew "jenv"
 EOF
 
 echo "Cleaning up old Homebrew formulae..."
@@ -74,58 +77,13 @@ done
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 # Enable CLI colors if not present
-grep -q -F "CLICOLOR=1" ~/.bash_profile || echo "CLICOLOR=1" >> ~/.bash_profile
+grep -q -F "CLICOLOR=1" ~/.bash_profile             || echo "CLICOLOR=1" >> ~/.bash_profile
 
-if [ -d "$HOME/.asdf" ]; then
-  echo "Upgrading ASDF version manager..."
-  (
-    cd "$HOME/.asdf"
-    git pull origin master
-  )
-else
-  echo "Installing ASDF version manager..."
-  git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf"
+grep -q -F '$HOME/.jenv/bin' ~/.bash_profile        || echo 'export PATH=""$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
 
-  # shellcheck disable=SC2016
-  echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bash_profile
+grep -q -F 'eval "$(jenv init -)"' ~/.bash_profile  || echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 
-  # shellcheck disable=SC2016
-  echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bash_profile
-fi
-
-# shellcheck source=/dev/null
-. "$HOME/.asdf/asdf.sh"
-
-asdf_plugin_add() {
-  local name="$1"
-  local source="$2"
-
-  if ! asdf plugin-list | grep -Fq "$name"; then
-    asdf plugin-add "$name" "$source"
-  fi
-}
-
-asdf_install() {
-  local language="$1"
-  local version="$2"
-
-  if ! asdf list "$language" | grep -Fq "$version"; then
-    asdf install "$language" "$version"
-    asdf global "$language" "$version"
-  fi
-}
-
-echo "Installing Node..."
-asdf_plugin_add "nodejs" "https://github.com/asdf-vm/asdf-nodejs"
-export NODEJS_CHECK_SIGNATURES=no
-asdf_install "nodejs" "8.9.0"
-
-echo "Installing Java and Maven..."
-asdf_plugin_add "java" "https://github.com/skotchpine/asdf-java"
-asdf_install "java" "8.161"
-
-asdf_plugin_add "maven" "https://github.com/skotchpine/asdf-maven"
-asdf_install "maven" "3.3.9"
+source ~/.bash_profile
 
 
 if [ -f "$HOME/.macbook.local" ]; then
