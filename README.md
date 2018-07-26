@@ -55,10 +55,7 @@ Unix tools:
 
 Programming languages, package managers, and configuration:
 
-* [ASDF] for managing programming language versions
 * [Java] SE Development Kit 8
-* [Node.js] and [NPM], for running apps and installing JavaScript packages
-* [Yarn] for managing JavaScript packages
 
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.org/
@@ -70,27 +67,18 @@ Programming languages, package managers, and configuration:
 
 Listing and installing a greater version of Java
 
-```sh
-# List all version
-$ asdf list-all java
-8.161
-9.0.1
-
-# Installing Java v9.0.1
-$ asdf install java 9.0.1
+```
+brew search java
 ```
 
-Listing and installing a greater version of Java
-
-```sh
-# List all version
-$ asdf list-all java
-8.161
-9.0.1
-
-# Installing Java v9.0.1
-$ asdf install java 9.0.1
 ```
+brew install java6
+```
+
+Running `brew install java` will always install the latest version of java.
+
+Use `brew cask info java` to know the version of the latest Java binary.
+
 
 ## Installing a database (eg: MySQL or PostgreSQL) ##
 
