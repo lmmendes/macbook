@@ -83,7 +83,7 @@ grep -q -F '$HOME/.jenv/bin' ~/.bash_profile        || echo 'export PATH=""$HOME
 
 grep -q -F 'eval "$(jenv init -)"' ~/.bash_profile  || echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 
-source "~/.bash_profile"
+source "$HOME/.bash_profile"
 
 
 if [ -f "$HOME/.macbook.local" ]; then
