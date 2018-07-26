@@ -77,12 +77,17 @@ done
 # PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 
 # Enable CLI colors if not present
+
+# shellcheck disable=SC2016
 grep -q -F "CLICOLOR=1" ~/.bash_profile             || echo "CLICOLOR=1" >> ~/.bash_profile
 
+# shellcheck disable=SC2016
 grep -q -F '$HOME/.jenv/bin' ~/.bash_profile        || echo 'export PATH=""$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
 
+# shellcheck disable=SC2016
 grep -q -F 'eval "$(jenv init -)"' ~/.bash_profile  || echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 
+# shellcheck source=/home/user/.bash_profile
 source "$HOME/.bash_profile"
 
 
