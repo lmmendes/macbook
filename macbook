@@ -87,7 +87,7 @@ grep -q -F '$HOME/.jenv/bin' ~/.bash_profile        || echo 'export PATH=""$HOME
 # shellcheck disable=SC2016
 grep -q -F 'eval "$(jenv init -)"' ~/.bash_profile  || echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 
-# shellcheck source=/home/user/.bash_profile
+# shellcheck $HOME=/home/user
 source "$HOME/.bash_profile"
 
 
