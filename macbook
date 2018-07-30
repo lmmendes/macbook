@@ -58,6 +58,7 @@ cask "ngrok"
 brew "bash-completion"
 brew "cf-cli"
 brew "jenv"
+brew "python@2"
 EOF
 
 echo "Cleaning up old Homebrew formulae..."
@@ -87,9 +88,11 @@ grep -q -F '$HOME/.jenv/bin' ~/.bash_profile        || echo 'export PATH=""$HOME
 # shellcheck disable=SC2016
 grep -q -F 'eval "$(jenv init -)"' ~/.bash_profile  || echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 
+# shellcheck disable=SC2016
+grep -q -F 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' ~/.bash_profile || echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.bash_profile
+
 # shellcheck $HOME=/home/user
 source "$HOME/.bash_profile"
-
 
 if [ -f "$HOME/.macbook.local" ]; then
   bash "$HOME/.macbook.local"
